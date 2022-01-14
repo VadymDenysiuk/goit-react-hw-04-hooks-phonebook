@@ -22,7 +22,9 @@ function App() {
       name,
       number,
     };
-    const duplicateName = contacts.map(contact => contact.name).includes(name);
+
+    const duplicateName = contacts.find(contact => contact.name.includes(name));
+
     if (duplicateName) {
       toast.error('Already here');
     } else {
